@@ -14,3 +14,11 @@ También se puede usar desde el navegador: https://crisp-granite-acre-beacon.gro
 Política de privacidad: https://crisp-granite-acre-beacon.grok.me/privacidad.html
 
 Contacto: nexoairespuestas@gmail.com
+
+## Instalar y actualizar
+
+La guía completa, en pocas palabras, está en [GUIA.md](GUIA.md).
+
+**Primera vez:** abrí en el celular https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai.apk (si es muy viejo y no instala, usá https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai-celulares-viejos.apk), permití instalar apps de esa fuente y tocá Instalar.
+
+**Para actualizar:** volvé a abrir el mismo enlace e instalá encima. No desinstales la app: si la borrás, se pierden las conversaciones y la racha. Las versiones nuevas se anuncian en https://github.com/jeremias0707/nexo-ai-descargas/releases (la que dice Latest).
