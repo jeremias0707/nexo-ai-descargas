@@ -1,6 +1,6 @@
 # NEXO AI · Descargas
 
-Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba.
+Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas.
 
 ## Cómo instalarla en Android
 1. Entrá a [Releases](../../releases/latest) y descargá `nexo-ai.apk`.
