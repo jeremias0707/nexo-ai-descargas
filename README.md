@@ -1,13 +1,13 @@
 # NEXO AI · Descargas
 
-Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas. En el menú, Ajustes (versión 1.8.2) deja elegir tema, tamaño de letra, cómo explica y el modo de respuesta; también hay Perfil, Favoritos, Fichas y Desafío de la semana: todo queda solo en el celular. La 1.8.2 arregla el diagrama dentro de la app.
+Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas. En el menú, Ajustes (versión 2.5.0) deja elegir tema, tamaño de letra, cómo explica y el modo de respuesta; también hay Perfil, Favoritos, Fichas y Desafío de la semana: todo queda solo en el celular. La 1.8.2 arregla el diagrama dentro de la app.
 
 ## Dos descargas
 
 Android y Windows se bajan por separado. Una actualización de Windows no tiene que mezclarse con la del celular.
 
 ### Android
-La versión del celular es la que GitHub marca como Latest: [NEXO AI 1.8.2](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v1.8.2).
+La versión del celular es la que GitHub marca como Latest: [NEXO AI 2.5.0](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v2.5.0).
 
 - [nexo-ai.apk](https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai.apk) — celulares actuales
 - [nexo-ai-celulares-viejos.apk](https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai-celulares-viejos.apk) — celulares viejos
