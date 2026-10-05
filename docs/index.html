@@ -5,23 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NEXO AI — tutor de estudio con IA en español. Chat, exámenes, flashcards, plan semanal y más para estudiantes de secundario y universidad.">
   <meta name="theme-color" content="#0b1f3a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="NEXO AI — Tutor de estudio con IA">
+  <meta property="og:description" content="Tutor de estudio con IA en español. Chat, práctica, fichas, plan semanal y modo oral. Núcleo gratis · Web, Android y Windows.">
+  <meta property="og:url" content="https://jeremias0707.github.io/nexo-ai-descargas/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NEXO AI — Tutor de estudio con IA">
+  <meta name="twitter:description" content="Tutor de estudio con IA en español. Chat, práctica, fichas y plan semanal. Núcleo gratis.">
   <title>NEXO AI — Tutor de estudio con IA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="logo" href="#inicio" aria-label="NEXO AI — inicio">
         <span class="logo-mark" aria-hidden="true">N</span>
         <span class="logo-text">NEXO <em>AI</em></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Principal">
         <a href="#que-es">Qué es</a>
@@ -37,6 +48,7 @@
   <main id="main">
     <!-- HERO -->
     <section id="inicio" class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Tutor de estudio con IA · en español</p>
@@ -92,7 +104,7 @@
       </div>
     </section>
 
-    <!-- FUNCIONES (lista completa agrupada) -->
+    <!-- FUNCIONES -->
     <section id="funciones" class="section">
       <div class="container">
         <header class="section-head">
@@ -104,32 +116,44 @@
           <h3 class="feature-group-title">Estudio y práctica</h3>
           <div class="features-grid">
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">💬</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
               <h3>Chat de estudio</h3>
               <p>Preguntá, pedí explicaciones y resolvé dudas con un tutor en español.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">📝</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+              </div>
               <h3>Exámenes y práctica</h3>
               <p>Generá evaluaciones y ejercitación para medir qué sabés y dónde reforzar.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">✅</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              </div>
               <h3>Corrección</h3>
               <p>Recibí feedback sobre tus respuestas para mejorar con criterio.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">📋</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+              </div>
               <h3>Rúbricas</h3>
               <p>Evaluá con criterios claros, como en un trabajo real.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">🎯</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
+              </div>
               <h3>Modos Guiado y respuestas cortas</h3>
               <p>Elegí explicación paso a paso o respuestas breves según el momento.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">⚡</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 10-14h-7l1-6z"/></svg>
+              </div>
               <h3>Desafío diario</h3>
               <p>Un reto cada día para no perder el ritmo de estudio.</p>
             </article>
@@ -140,27 +164,37 @@
           <h3 class="feature-group-title">Memoria y organización</h3>
           <div class="features-grid">
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">🃏</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="14" height="16" rx="2"/><rect x="7" y="2" width="14" height="16" rx="2"/></svg>
+              </div>
               <h3>Fichas (flashcards)</h3>
               <p>Repasá conceptos clave con fichas listas para memorizar.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">📅</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+              </div>
               <h3>Plan semanal</h3>
               <p>Organizá la semana de estudio y mantené el ritmo sin improvisar.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">🔥</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M8.5 7.5 6 5M15.5 7.5 18 5"/><path d="M8 14c0-2.2 1.8-4 4-4s4 1.8 4 4c0 3-4 7-4 7s-4-4-4-7z"/></svg>
+              </div>
               <h3>Racha de estudio</h3>
               <p>Mantené el hábito día a día y visualizá tu constancia.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">🏷️</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4A9 9 0 1 1 10.6 3.4"/><path d="M22 2v6h-6M12 8v4l3 2"/></svg>
+              </div>
               <h3>Chips de materias</h3>
               <p>Organizá por materia y cambiá de contexto en un toque.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">📤</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4 19h16"/></svg>
+              </div>
               <h3>Exportar resumen</h3>
               <p>Llevate un resumen listo para repasar o compartir.</p>
             </article>
@@ -171,17 +205,23 @@
           <h3 class="feature-group-title">Materiales y visualización</h3>
           <div class="features-grid">
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">📷</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-4.5-4.5L12 17"/></svg>
+              </div>
               <h3>Fotos y PDF</h3>
               <p>Subí fotos de la pizarra o PDFs de la cátedra y trabajá sobre ellos.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">📄</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h9a2 2 0 0 1 2 2v10"/><path d="M16 18H7a2 2 0 0 1-2-2V6"/><path d="M9 10h4M9 14h6"/></svg>
+              </div>
               <h3>Comparar con apunte</h3>
               <p>Contrastá lo que sabés con tu material y detectá huecos.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">🔀</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 10.5 16M16 7.5 13.5 16"/></svg>
+              </div>
               <h3>Diagramas Mermaid</h3>
               <p>Visualizá procesos y relaciones con diagramas dentro de la app.</p>
             </article>
@@ -192,12 +232,16 @@
           <h3 class="feature-group-title">Oralidad y colaboración</h3>
           <div class="features-grid">
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">🎙️</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></svg>
+              </div>
               <h3>Modo oral / profe</h3>
               <p>Practicá como si hablaras con un profesor: oralidad y explicación en vivo.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon" aria-hidden="true">👥</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
               <h3>Modo grupo</h3>
               <p>Estudiá acompañado: útil para trabajos y repasos compartidos.</p>
             </article>
@@ -251,6 +295,7 @@
         </header>
         <div class="download-grid">
           <article class="download-card featured">
+            <span class="download-badge">Recomendado</span>
             <h3>Web</h3>
             <p>Usá NEXO desde el navegador. Ideal para empezar ya.</p>
             <a class="btn btn-primary" href="https://crisp-granite-acre-beacon.grok.me" target="_blank" rel="noopener noreferrer">Abrir NEXO</a>
@@ -288,9 +333,9 @@
     </section>
 
     <!-- CTA FINAL -->
-    <section class="section cta-band">
+    <section class="section cta-band" aria-labelledby="cta-final-title">
       <div class="container narrow cta-inner">
-        <h2>Listo para estudiar con NEXO</h2>
+        <h2 id="cta-final-title">Listo para estudiar con NEXO</h2>
         <p>Abrí la web o bajá la app. Núcleo gratis. Hecho por un estudiante, para estudiantes.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary btn-lg" href="https://crisp-granite-acre-beacon.grok.me" target="_blank" rel="noopener noreferrer">Abrir NEXO</a>
@@ -309,17 +354,20 @@
           <p>Tutor de estudio con IA · Proyecto estudiantil de Jeremías (Jere)</p>
         </div>
       </div>
-      <div class="footer-links">
+      <nav class="footer-nav" aria-label="Pie de página">
         <a href="https://crisp-granite-acre-beacon.grok.me" target="_blank" rel="noopener noreferrer">Abrir app</a>
         <a href="https://github.com/jeremias0707/nexo-ai-descargas/releases" target="_blank" rel="noopener noreferrer">Releases</a>
-        <a href="https://github.com/jeremias0707" target="_blank" rel="noopener noreferrer">GitHub · jeremias0707</a>
+        <a href="https://github.com/jeremias0707" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://link.mercadopago.com.ar/donacionesnexo" target="_blank" rel="noopener noreferrer">Donar</a>
+        <a href="mailto:nexoairespuestas@gmail.com">Contacto</a>
+      </nav>
+      <p class="footer-meta">
         <a href="mailto:nexoairespuestas@gmail.com">nexoairespuestas@gmail.com</a>
-      </div>
-      <p class="footer-meta">Versión 2.6 · Landing estática · Sin tiendas oficiales</p>
+        · Versión 2.6 · Sin tiendas oficiales
+      </p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
