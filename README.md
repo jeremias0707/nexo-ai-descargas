@@ -1,19 +1,19 @@
 # NEXO AI · Descargas
 
-Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas. En el menú, Ajustes (versión 1.8.1) deja elegir tema, tamaño de letra, cómo explica y el modo de respuesta; también hay Perfil, Favoritos, Fichas y Desafío de la semana: todo queda solo en el celular.
+Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas. En el menú, Ajustes (versión 1.8.2) deja elegir tema, tamaño de letra, cómo explica y el modo de respuesta; también hay Perfil, Favoritos, Fichas y Desafío de la semana: todo queda solo en el celular. La 1.8.2 arregla el diagrama dentro de la app.
 
 ## Dos descargas
 
 Android y Windows se bajan por separado. Una actualización de Windows no tiene que mezclarse con la del celular.
 
 ### Android
-La versión del celular es la que GitHub marca como Latest: [NEXO AI 1.8.1](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v1.8.1).
+La versión del celular es la que GitHub marca como Latest: [NEXO AI 1.8.2](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v1.8.2).
 
 - [nexo-ai.apk](https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai.apk) — celulares actuales
 - [nexo-ai-celulares-viejos.apk](https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai-celulares-viejos.apk) — celulares viejos
 
 ### Windows
-El zip de la PC es una prerelease, no el Latest: [NEXO AI para Windows 1.8.0](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v1.8.0-windows) ([nexo-ai-windows.zip](https://github.com/jeremias0707/nexo-ai-descargas/releases/download/v1.8.0-windows/nexo-ai-windows.zip)).
+El zip de la PC es una prerelease, no el Latest: [NEXO AI para Windows 1.8.1](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v1.8.1-windows) ([nexo-ai-windows.zip](https://github.com/jeremias0707/nexo-ai-descargas/releases/download/v1.8.1-windows/nexo-ai-windows.zip)).
 
 El aviso de actualización del teléfono solo mira el release Latest de Android (`/releases/latest`) y abre `nexo-ai.apk` (o el APK de celulares viejos). Por eso una subida de Windows tiene que seguir siendo prerelease, o un tag que no sea Latest, y nunca debe reemplazar `nexo-ai.apk`.
 
