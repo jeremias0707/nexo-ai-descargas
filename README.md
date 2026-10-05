@@ -13,7 +13,7 @@ La versión del celular es la que GitHub marca como Latest: [NEXO AI 2.5.0](http
 - [nexo-ai-celulares-viejos.apk](https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai-celulares-viejos.apk) — celulares viejos
 
 ### Windows
-El zip de la PC es una prerelease, no el Latest: [NEXO AI para Windows 1.8.2](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v1.8.2-windows) ([nexo-ai-windows.zip](https://github.com/jeremias0707/nexo-ai-descargas/releases/download/v1.8.2-windows/nexo-ai-windows.zip)).
+El zip de la PC es una prerelease, no el Latest: [NEXO AI para Windows 2.6.0](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v2.6.0-windows) ([nexo-ai-windows.zip](https://github.com/jeremias0707/nexo-ai-descargas/releases/download/v2.6.0-windows/nexo-ai-windows.zip)).
 
 El aviso de actualización del teléfono solo mira el release Latest de Android (`/releases/latest`) y abre `nexo-ai.apk` (o el APK de celulares viejos). Por eso una subida de Windows tiene que seguir siendo prerelease, o un tag que no sea Latest, y nunca debe reemplazar `nexo-ai.apk`.
 
