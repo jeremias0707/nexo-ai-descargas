@@ -1,13 +1,13 @@
 # NEXO AI · Descargas
 
-Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas. En el menú, Ajustes (versión 3.0.0) deja elegir tema, tamaño de letra, cómo explica y el modo de respuesta; también hay Perfil, Favoritos, Fichas y Desafío de la semana: todo queda solo en el celular. La 3.0 suma Repasar mis errores (un repaso que se adapta a lo que te cuesta), Apuntes (subís un PDF o fotos y te arma resumen, fichas, diagrama y examen) y un Plan de estudio con varias materias y «Hoy toca» en el inicio.
+Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas. En el menú, Ajustes (versión 3.0.1) deja elegir tema, tamaño de letra, cómo explica y el modo de respuesta; también hay Perfil, Favoritos, Fichas y Desafío de la semana: todo queda solo en el celular. La 3.0 suma Repasar mis errores (un repaso que se adapta a lo que te cuesta), Apuntes (subís un PDF o fotos y te arma resumen, fichas, diagrama y examen) y un Plan de estudio con varias materias y «Hoy toca» en el inicio. La 3.0.1 muestra los chats sin límite hasta el 14 de noviembre.
 
 ## Dos descargas
 
 Android y Windows se bajan por separado. Una actualización de Windows no tiene que mezclarse con la del celular.
 
 ### Android
-La versión del celular es la que GitHub marca como Latest: [NEXO AI 3.0.0](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v3.0.0).
+La versión del celular es la que GitHub marca como Latest: [NEXO AI 3.0.1](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v3.0.1).
 
 - [nexo-ai.apk](https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai.apk) — celulares actuales
 - [nexo-ai-celulares-viejos.apk](https://github.com/jeremias0707/nexo-ai-descargas/releases/latest/download/nexo-ai-celulares-viejos.apk) — celulares viejos
