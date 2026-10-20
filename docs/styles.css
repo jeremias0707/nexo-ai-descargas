@@ -804,3 +804,23 @@ a:hover { color: var(--amber-deep); }
   .btn:hover { transform: none; }
   .card-flash { transform: none; }
 }
+
+/* iPhone (instalar desde Safari) */
+.iphone-card {
+  margin-top: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  border-radius: 18px;
+  background: var(--surface, rgba(255, 255, 255, 0.03));
+}
+.iphone-card h3 { margin: 0 0 0.4rem; }
+.iphone-card p { margin: 0 0 0.6rem; }
+.iphone-steps { margin: 0 0 0.6rem; padding-left: 1.2rem; line-height: 1.6; }
+.iphone-card .btn { flex-shrink: 0; }
+@media (max-width: 760px) {
+  .iphone-card { flex-direction: column; align-items: stretch; }
+}

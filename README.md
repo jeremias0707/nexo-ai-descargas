@@ -2,9 +2,9 @@
 
 Tutor con inteligencia artificial en español: explica paso a paso, lee fotos de ejercicios, PDFs y apuntes, y se le puede preguntar hablando. Tiene racha, XP y medallas, y un modo examen para practicar antes de la prueba. Si te equivocás, tocá Repasar errores y volvé a intentar solo esas preguntas. En el menú, Ajustes (versión 3.0.2) deja elegir tema, tamaño de letra, cómo explica y el modo de respuesta; también hay Perfil, Favoritos, Fichas y Desafío de la semana: todo queda solo en el celular. La 3.0 suma Repasar mis errores (un repaso que se adapta a lo que te cuesta), Apuntes (subís un PDF o fotos y te arma resumen, fichas, diagrama y examen) y un Plan de estudio con varias materias y «Hoy toca» en el inicio. La 3.0.2 ya no pide código: abrís y usás, con chats sin límite.
 
-## Dos descargas
+## Descargas
 
-Android y Windows se bajan por separado. Una actualización de Windows no tiene que mezclarse con la del celular.
+Android y Windows se bajan por separado; en iPhone se instala desde Safari. Una actualización de Windows no tiene que mezclarse con la del celular.
 
 ### Android
 La versión del celular es la que GitHub marca como Latest: [NEXO AI 3.0.2](https://github.com/jeremias0707/nexo-ai-descargas/releases/tag/v3.0.2).
@@ -17,6 +17,9 @@ El zip de la PC es una prerelease, no el Latest: [NEXO AI para Windows 3.0.2](ht
 
 El aviso de actualización del teléfono solo mira el release Latest de Android (`/releases/latest`) y abre `nexo-ai.apk` (o el APK de celulares viejos). Por eso una subida de Windows tiene que seguir siendo prerelease, o un tag que no sea Latest, y nunca debe reemplazar `nexo-ai.apk`.
 
+### iPhone
+No hace falta App Store. NEXO se instala desde Safari y queda en la pantalla de inicio como una app más (pantalla completa, siempre la última versión). Ver [Cómo instalarla en iPhone](#cómo-instalarla-en-iphone).
+
 ## Cómo instalarla en Android
 1. Entrá a [Releases](../../releases/latest) y descargá `nexo-ai.apk`.
 2. Abrí el archivo. Si el celular lo pide, permití "instalar apps de origen desconocido".
@@ -25,6 +28,12 @@ El aviso de actualización del teléfono solo mira el release Latest de Android 
 ¿Celular muy viejo y no se instala? Descargá `nexo-ai-celulares-viejos.apk`.
 
 También se puede usar desde el navegador: https://crisp-granite-acre-beacon.grok.me
+
+## Cómo instalarla en iPhone
+1. Abrí https://crisp-granite-acre-beacon.grok.me en **Safari** (no en Chrome ni dentro de Instagram o WhatsApp).
+2. Tocá **Compartir** (el cuadrado con la flecha para arriba).
+3. Elegí **Agregar a inicio** y tocá **Agregar**.
+4. ¡Listo! Abrí NEXO AI desde el ícono nuevo.
 
 Política de privacidad: https://crisp-granite-acre-beacon.grok.me/privacidad.html
 
