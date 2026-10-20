@@ -813,9 +813,10 @@ a:hover { color: var(--amber-deep); }
   justify-content: space-between;
   gap: 1.25rem;
   padding: 1.4rem 1.5rem;
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-  border-radius: 18px;
-  background: var(--surface, rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(18, 42, 74, 0.1);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
 }
 .iphone-card h3 { margin: 0 0 0.4rem; }
 .iphone-card p { margin: 0 0 0.6rem; }
