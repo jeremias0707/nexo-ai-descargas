@@ -818,7 +818,8 @@ a:hover { color: var(--amber-deep); }
   background: var(--white);
   box-shadow: var(--shadow-sm);
 }
-.iphone-card h3 { margin: 0 0 0.4rem; }
+.iphone-card h3 { margin: 0 0 0.4rem; font-family: var(--display); font-size: 1.35rem; color: var(--navy-900); }
+.iphone-card p, .iphone-steps { font-size: 0.95rem; color: var(--ink-muted); }
 .iphone-card p { margin: 0 0 0.6rem; }
 .iphone-steps { margin: 0 0 0.6rem; padding-left: 1.2rem; line-height: 1.6; }
 .iphone-card .btn { flex-shrink: 0; }
