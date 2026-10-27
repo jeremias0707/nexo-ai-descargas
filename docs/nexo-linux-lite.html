@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>NEXO AI · Linux Lite (Pale Moon)</title>
+<style type="text/css">
+/* CSS viejo a propósito: Pale Moon / Firefox ESR viejo */
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #2C3338;
+  background: #F7F3EE;
+}
+#wrap { width: 920px; margin: 0 auto; padding: 12px; }
+#header {
+  background: #EDE6F7;
+  border: 1px solid #E2D9CF;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+#header h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #3A9B94;
+}
+#header p { margin: 4px 0 0 0; color: #7A858C; font-size: 12px; }
+#keybox {
+  background: #FFFBF7;
+  border: 1px solid #E2D9CF;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#keybox label { display: block; margin-bottom: 4px; font-weight: bold; }
+#keybox input {
+  width: 70%;
+  padding: 6px;
+  border: 1px solid #C8BDB0;
+  font-size: 13px;
+}
+#keybox button {
+  padding: 6px 12px;
+  margin-left: 6px;
+  background: #5BB8B0;
+  color: #fff;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+#subjects { margin-bottom: 10px; }
+.chip {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  padding: 6px 12px;
+  background: #E8F4F2;
+  color: #2F5F5A;
+  border: 1px solid #B8D9D4;
+  cursor: pointer;
+  font-size: 13px;
+}
+.chip.on {
+  background: #5BB8B0;
+  color: #fff;
+  border-color: #3A9B94;
+}
+#chat {
+  background: #FFFFFF;
+  border: 1px solid #E2D9CF;
+  height: 340px;
+  overflow: auto;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.msg { margin-bottom: 12px; }
+.who { font-weight: bold; margin-bottom: 2px; }
+.who.user { color: #D96B7A; }
+.who.bot { color: #3A9B94; }
+.who.sys { color: #7B6BB0; }
+.body { white-space: pre-wrap; line-height: 1.4; }
+#input {
+  width: 98%;
+  height: 70px;
+  padding: 8px;
+  border: 1px solid #C8BDB0;
+  background: #FFFBF7;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+#btns { margin-top: 8px; }
+#btns button {
+  padding: 8px 14px;
+  margin-right: 6px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+.btn-send { background: #5BB8B0; color: #fff; }
+.btn-exam { background: #E07A8A; color: #fff; }
+.btn-soft { background: #E8E0F0; color: #2C3338; }
+#status { margin-top: 8px; font-size: 12px; color: #7A858C; }
+#status.err { color: #C45C5C; }
+#status.ok { color: #3D9B6E; }
+#note {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #7A858C;
+  border-top: 1px solid #E2D9CF;
+  padding-top: 8px;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1>NEXO AI · Linux Lite</h1>
+    <p>Versión web temporal para Pale Moon · 3.0.2-linux-lite-web · sin fotos/PDF</p>
+  </div>
+
+  <div id="keybox">
+    <label for="apikey">Clave gratis de Gemini (se guarda solo en este navegador)</label>
+    <input id="apikey" type="password" placeholder="Pegá acá tu API key de aistudio.google.com/apikey" />
+    <button type="button" id="savekey">Guardar</button>
+  </div>
+
+  <div id="subjects"></div>
+  <div id="chat"></div>
+  <textarea id="input" placeholder="Escribí tu duda…"></textarea>
+  <div id="btns">
+    <button type="button" class="btn-send" id="btnsend">Enviar</button>
+    <button type="button" class="btn-exam" id="btnexam">Modo examen</button>
+    <button type="button" class="btn-soft" id="btnclear">Limpiar</button>
+  </div>
+  <div id="status">Listo.</div>
+  <div id="note">
+    Página temporal pensada para Pale Moon (CSS/JS simple).
+    La clave viaja a Google Gemini desde tu navegador; no la compartas.
+    Si falla la red (CORS/SSL), usá el zip nativo:
+    https://github.com/jeremias0707/nexo-ai-descargas/releases/download/v3.0.2-linux-lite/nexo-ai-linux-lite.zip
+  </div>
+</div>
+
+<script type="text/javascript">
+(function () {
+  var SUBJECTS = ["Matemática", "Historia", "Biología", "Lengua", "Química", "Física", "Otras"];
+  var MODELS = [
+    "gemini-flash-latest",
+    "gemini-2.0-flash",
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b"
+  ];
+  var MAX_TURNS = 12;
+  var subject = SUBJECTS[0];
+  var history = [];
+  var busy = false;
+
+  var chatEl = document.getElementById("chat");
+  var statusEl = document.getElementById("status");
+  var inputEl = document.getElementById("input");
+  var subjectsEl = document.getElementById("subjects");
+  var keyEl = document.getElementById("apikey");
+
+  function setStatus(msg, kind) {
+    statusEl.className = kind || "";
+    statusEl.innerHTML = msg;
+  }
+
+  function appendMsg(who, text, cls) {
+    var div = document.createElement("div");
+    div.className = "msg";
+    var w = document.createElement("div");
+    w.className = "who " + cls;
+    w.appendChild(document.createTextNode(who));
+    var b = document.createElement("div");
+    b.className = "body";
+    b.appendChild(document.createTextNode(text));
+    div.appendChild(w);
+    div.appendChild(b);
+    chatEl.appendChild(div);
+    chatEl.scrollTop = chatEl.scrollHeight;
+  }
+
+  function systemPrompt(subj) {
+    return "Sos NEXO, un tutor de estudio para estudiantes de secundaria/preparatoria " +
+      "en Argentina/Uruguay. Hablá en español rioplatense natural (vos, dale, mirá), " +
+      "claro y cercano, sin ser infantil. Materia actual: " + subj + ". " +
+      "Explicá paso a paso. Si no estás seguro, decilo. No inventes datos. " +
+      "No des respuestas solo para copiar en un examen: ayudá a entender. " +
+      "Sé breve si alcanza. Esta es NEXO Linux Lite web (Pale Moon): sin fotos, PDF ni plan.";
+  }
+
+  function getKey() {
+    var k = keyEl.value;
+    if (!k && window.localStorage) {
+      try { k = localStorage.getItem("nexo_gemini_key") || ""; } catch (e) {}
+    }
+    return (k || "").replace(/^\s+|\s+$/g, "");
+  }
+
+  function saveKey() {
+    var k = keyEl.value.replace(/^\s+|\s+$/g, "");
+    if (window.localStorage) {
+      try { localStorage.setItem("nexo_gemini_key", k); } catch (e) {}
+    }
+    if (k.length < 10) setStatus("Falta la clave de Gemini.", "err");
+    else setStatus("Clave guardada en este navegador · Materia: " + subject, "ok");
+  }
+
+  function buildSubjects() {
+    subjectsEl.innerHTML = "";
+    for (var i = 0; i < SUBJECTS.length; i++) {
+      (function (name) {
+        var b = document.createElement("span");
+        b.className = "chip" + (name === subject ? " on" : "");
+        b.appendChild(document.createTextNode(name));
+        b.onclick = function () {
+          subject = name;
+          buildSubjects();
+          setStatus("Materia: " + subject, "");
+        };
+        subjectsEl.appendChild(b);
+      })(SUBJECTS[i]);
+    }
+  }
+
+  function parseReply(raw) {
+    var obj;
+    try { obj = JSON.parse(raw); } catch (e) { return { err: "JSON inválido" }; }
+    if (obj.error) {
+      var m = obj.error.message || (typeof obj.error === "string" ? obj.error : "Error API");
+      return { err: m };
+    }
+    var cands = obj.candidates || [];
+    if (!cands.length) return { err: "Respuesta vacía" };
+    var parts = (cands[0].content && cands[0].content.parts) || [];
+    var texts = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i].text) texts.push(parts[i].text);
+    }
+    if (!texts.length) return { err: "Sin texto" };
+    return { text: texts.join("\n") };
+  }
+
+  function xhrPost(url, payload, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4) return;
+      cb(xhr.status, xhr.responseText || "");
+    };
+    try {
+      xhr.send(JSON.stringify(payload));
+    } catch (e) {
+      cb(0, String(e));
+    }
+  }
+
+  function callGemini(userText, cb) {
+    var key = getKey();
+    if (!key || key.length < 10) {
+      cb(null, "Falta GEMINI API key. Pegala arriba (aistudio.google.com/apikey).");
+      return;
+    }
+    history.push({ role: "user", text: userText });
+    while (history.length > MAX_TURNS * 2) history.shift();
+
+    var contents = [];
+    for (var i = 0; i < history.length; i++) {
+      contents.push({
+        role: history[i].role,
+        parts: [{ text: history[i].text }]
+      });
+    }
+    var payload = {
+      system_instruction: { parts: [{ text: systemPrompt(subject) }] },
+      contents: contents,
+      generationConfig: { temperature: 0.7, maxOutputTokens: 2048 }
+    };
+
+    var idx = 0;
+    function tryNext() {
+      if (idx >= MODELS.length) {
+        if (history.length && history[history.length - 1].role === "user") history.pop();
+        cb(null, "No se pudo contactar a Gemini. Revisá internet, fecha del sistema y clave.");
+        return;
+      }
+      var model = MODELS[idx++];
+      var url = "https://generativelanguage.googleapis.com/v1beta/models/" +
+        model + ":generateContent?key=" + encodeURIComponent(key);
+      xhrPost(url, payload, function (code, raw) {
+        if (code === 0) {
+          if (history.length && history[history.length - 1].role === "user") history.pop();
+          cb(null, "Error de red/CORS/SSL. En Pale Moon: corregí la fecha del PC. Alternativa: usá el zip Linux Lite.");
+          return;
+        }
+        var parsed = parseReply(raw);
+        if (code >= 200 && code < 300 && parsed.text) {
+          history.push({ role: "model", text: parsed.text });
+          while (history.length > MAX_TURNS * 2) history.shift();
+          cb(parsed.text + "\n\n[" + model + "]", null);
+          return;
+        }
+        if (code === 401 || code === 403) {
+          if (history.length && history[history.length - 1].role === "user") history.pop();
+          cb(null, "Clave inválida o sin permiso.");
+          return;
+        }
+        if (code === 429) {
+          if (history.length && history[history.length - 1].role === "user") history.pop();
+          cb(null, "Límite gratis de Gemini. Probá en unos minutos.");
+          return;
+        }
+        tryNext();
+      });
+    }
+    tryNext();
+  }
+
+  function send() {
+    if (busy) return;
+    var text = inputEl.value.replace(/^\s+|\s+$/g, "");
+    if (!text) return;
+    inputEl.value = "";
+    appendMsg("Vos", text, "user");
+    busy = true;
+    setStatus("Pensando…", "");
+    callGemini(text, function (reply, err) {
+      busy = false;
+      if (reply) {
+        appendMsg("NEXO", reply, "bot");
+        setStatus("Listo · Materia: " + subject, "ok");
+      } else {
+        appendMsg("NEXO", "Error: " + err, "sys");
+        setStatus(err, "err");
+      }
+    });
+  }
+
+  function exam() {
+    if (busy) return;
+    var tema = inputEl.value.replace(/^\s+|\s+$/g, "");
+    if (!tema) {
+      appendMsg("NEXO", "Para Modo examen: escribí un tema y tocá Modo examen.", "sys");
+      return;
+    }
+    inputEl.value = "";
+    var prompt = "Armá un mini ensayo de práctica (modo examen) sobre: " + tema + ".\n" +
+      "Dadme exactamente 3 preguntas claras, numeradas 1-2-3, acordes a la materia " + subject + ".\n" +
+      "Después, en una sección RESPUESTAS, poné respuestas breves comentadas.\n" +
+      "Nivel secundario. Español rioplatense.";
+    appendMsg("Vos", "[Modo examen] " + tema, "user");
+    busy = true;
+    setStatus("Armando 3 preguntas…", "");
+    callGemini(prompt, function (reply, err) {
+      busy = false;
+      if (reply) {
+        appendMsg("NEXO examen", reply, "bot");
+        setStatus("Listo · Materia: " + subject, "ok");
+      } else {
+        appendMsg("NEXO", "Error: " + err, "sys");
+        setStatus(err, "err");
+      }
+    });
+  }
+
+  function clearChat() {
+    history = [];
+    chatEl.innerHTML = "";
+    appendMsg("NEXO", "Chat limpio. Elegí materia y preguntá de nuevo.", "sys");
+  }
+
+  document.getElementById("savekey").onclick = saveKey;
+  document.getElementById("btnsend").onclick = send;
+  document.getElementById("btnexam").onclick = exam;
+  document.getElementById("btnclear").onclick = clearChat;
+
+  if (window.localStorage) {
+    try {
+      var saved = localStorage.getItem("nexo_gemini_key") || "";
+      if (saved) keyEl.value = saved;
+    } catch (e) {}
+  }
+
+  buildSubjects();
+  appendMsg("NEXO",
+    "Hola. Soy NEXO Linux Lite (web para Pale Moon).\n" +
+    "1) Pegá tu clave Gemini arriba y tocá Guardar.\n" +
+    "2) Elegí materia, escribí la duda y Enviar.\n" +
+    "Si la fecha del sistema está mal, Google puede fallar: corregila primero.",
+    "sys");
+  if (getKey().length >= 10) setStatus("Clave detectada · Materia: " + subject, "ok");
+  else setStatus("Falta la clave de Gemini arriba.", "err");
+})();
+</script>
+</body>
+</html>
