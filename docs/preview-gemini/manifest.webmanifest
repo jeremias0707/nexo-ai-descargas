@@ -1,0 +1,44 @@
+{
+ "name": "NEXO AI (vista previa Gemini)",
+ "short_name": "NEXO Gemini",
+ "description": "Tu compañero de estudio con IA.",
+ "id": "/nexo-ai-descargas/preview-gemini/",
+ "start_url": "/nexo-ai-descargas/preview-gemini/",
+ "scope": "/nexo-ai-descargas/preview-gemini/",
+ "display": "standalone",
+ "orientation": "portrait",
+ "lang": "es-AR",
+ "background_color": "#050505",
+ "theme_color": "#050505",
+ "icons": [
+  {
+   "src": "/nexo-ai-descargas/preview-gemini/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/nexo-ai-descargas/preview-gemini/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/nexo-ai-descargas/preview-gemini/icons/maskable-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "maskable"
+  },
+  {
+   "src": "/nexo-ai-descargas/preview-gemini/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  },
+  {
+   "src": "/nexo-ai-descargas/preview-gemini/icons/apple-touch-icon.png",
+   "sizes": "180x180",
+   "type": "image/png"
+  }
+ ]
+}
