@@ -1,1 +1,0 @@
-var e=6e3;function t(e,t=20,n=24e3){let r=e.map(e=>e.role).lastIndexOf(`user`);if(r===-1)return{messages:[],dropped:e.length};let i=[e[r]],a=e[r].content.length;for(let o=r-1;o>=0&&i.length<t&&(a+=e[o].content.length,!(a>n));--o)i.unshift(e[o]);for(;i.length>1&&i[0].role!==`user`;)i.shift();return{messages:i,dropped:r+1-i.length}}export{t as n,e as t};
